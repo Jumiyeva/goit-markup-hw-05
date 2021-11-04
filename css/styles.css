@@ -620,3 +620,51 @@ body{
     color: var(--primary-black-color);
 }
 
+.backdrop{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    transition: opacity 300ms linear, visibility 300ms linear;
+}
+
+.backdrop.is-hidden .modal{
+    transform: rotate(180deg);
+    transition: transform 300ms linear;
+}
+
+.modal{
+    position: absolute;
+    width: 528px;
+    min-height: 581px;
+    background-color: var(--primary-white-color);
+    border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: transform 300ms linear;
+}
+
+.modal-btn{
+    border: 1px solid #AFB1B8;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+
+
+.backdrop.is-hidden{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
